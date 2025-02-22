@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+console.log("Loaded ATLASDB_URL:", process.env.ATLASDB_URL); // Debugging
 
 const express = require('express');
 const app = express();
