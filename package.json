@@ -1,10 +1,10 @@
 {
  "engines": {
-  "node": "16.13.0"
+  "node": "20.18.0"
  },
  "name": "wanderlust",
  "version": "1.0.0",
- "main": "app.js",
+ "main": "index.js",
  "scripts": {
   "start": "node app.js",
   "test": "echo \"Error: no test specified\" && exit 1"
