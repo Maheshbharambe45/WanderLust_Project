@@ -31,13 +31,28 @@ app.engine('ejs', ejsMate);
 
 
 //database connection started
-const dbUrl = process.env.ATLASDB_URl;
+// const dbUrl = process.env.ATLASDB_URl;
+// main()
+// .then(() => console.log('Database Connected...'))
+// .catch(err => console.log(err));
+
+// async function main() {
+//   await mongoose.connect(dbUrl);
+// }
+
+const dbUrl = process.env.ATLASDB_URL;
+
+if (!dbUrl) {
+  console.error('❌ Database URL is missing! Check your .env file.');
+  process.exit(1);
+}
+
 main()
-.then(() => console.log('Database Connected...'))
-.catch(err => console.log(err));
+  .then(() => console.log('✅ Database Connected...'))
+  .catch(err => console.error('❌ Database Connection Error:', err));
 
 async function main() {
-  await mongoose.connect(dbUrl);
+  await mongoose.connect(dbUrl); // No need for deprecated options
 }
 //database connection ended
 
